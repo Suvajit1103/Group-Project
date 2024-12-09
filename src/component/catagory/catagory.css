@@ -1,0 +1,13 @@
+/* Container for the home page */
+.home-container {
+    width: 85%;
+    height: fit-content;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    /* overflow-y: auto; */
+    align-items: flex-start;
+    /* background-color: red; */
+}
