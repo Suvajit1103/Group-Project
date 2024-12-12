@@ -1,6 +1,6 @@
 /* Container for the home page */
 .home-container {
-    width: 85%;
+    /* width: 85%; */
     height: fit-content;
     padding: 20px;
     display: flex;
@@ -8,6 +8,24 @@
     flex-wrap: wrap;
     overflow-x: hidden;
     /* overflow-y: auto; */
-    align-items: flex-start;
+    /* align-items: flex-start; */
     /* background-color: red; */
+}
+/* .cnav{
+    display: flex;
+    /* width: 20%; 
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    height: fit-content;
+    padding: 20px;
+} */
+.ccard{
+    width: 80%;
+    height: fit-content;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    
 }

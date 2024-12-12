@@ -41,14 +41,19 @@ const Catagory = () => {
     })();
   }, []);
 
+
   return (
     <>
+    <div className="home-container">
+      <div className="cnav">
       <CNavbar category={category} onCategorySelect={filterProductsByCategory} />
-      <div className="home-container">
+      </div>
+      <div className="ccard">
         {filteredProducts.length > 0 &&
           filteredProducts.map((elem) => {
             return <Card key={elem.id} productData={elem} />;
           })}
+          </div>
       </div>
     </>
   );

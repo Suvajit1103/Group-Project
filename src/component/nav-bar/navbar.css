@@ -3,7 +3,7 @@
 .navbar{
     width: 100%;
     height: auto;
-    background: linear-gradient(to left, rgb(212, 246, 250), rgb(80, 199, 229));
+    background: linear-gradient(to left, rgb(212, 246, 250), rgb(63, 157, 181));
     border: 2px solid rgba(0, 0, 0, 0.211);
     display:flex;
     justify-content: space-between;
@@ -12,15 +12,20 @@
     border-radius:5px;
     backdrop-filter: blur(20px);     
     transition: 0.4s ease-in;
+    /* position: fixed;
+    overflow: hidden;
+    top: 0; */
 }
 .lightmode {
-    background-color: white;
-    color: black; 
+    background-color: rgb(193, 251, 255);
+    color: rgb(0, 0, 0); 
+    transition: 1s;
 }
 
 .darkmode {
-    background-color: black;
+    background-color: #151F28;
     color: white; 
+    transition: 1s;
 }
 
 
@@ -45,7 +50,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 280px;
+    width: 500px;
 }
 
 .nav-menu a {
@@ -53,6 +58,12 @@
     color: rgb(15, 12, 12);
     font-weight: 600;
     font-size: 18px;
+}
+.nav-menu #search input{
+    border-radius: 50px;
+    border: 1px solid gray;
+    padding: 5px;
+    background-color: transparent;
 }
 .login{
     padding: 10px;
@@ -79,5 +90,22 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+.suggestions {
+    list-style-type: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+    position: absolute; 
+    z-index: 1000;
+}
+
+.suggestions li {
+    padding: 10px;
+    cursor: pointer;
+}
+
 
 

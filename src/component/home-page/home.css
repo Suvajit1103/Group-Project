@@ -1,13 +1,14 @@
-.home{
-    position: absolute;
+ .home{
+    /* position: absolute; */
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 200px;
-    left: 44%;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: transparent;
  }
 
- .slider {
+ /*.slider {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,4 +44,4 @@
   background-color: #080909;
   color: #fbfbfb;
   transition: 0.5;
-}
+} */
