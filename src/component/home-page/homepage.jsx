@@ -1,6 +1,7 @@
-import React,{useRef, useState,useEffect} from 'react'
+import React,{useRef, useState,useEffect} from 'react';
 import './home.css';
 import Card from '../card/card';
+import axios from "axios";
 const images = [
     'https://i.pinimg.com/736x/51/d3/88/51d38806d50482762c700eca5717a32f.jpg',
     'https://helloyubo.com/wp-content/uploads/2022/09/IMG-20220913-WA0040-1024x465.jpg',
@@ -8,6 +9,14 @@ const images = [
   ];
 
 const Homepage = () => {
+   const [products, setProducts] = useState([]);
+    const [category, setCategory] = useState([]);
+    const [filteredProducts, setFilteredProducts] = useState([]);
+
+    function fetchProductsData(url) {
+      return axios.get(url);
+    }
+
   const listRef = useRef(); 
   const [currentIndex, setCurrentIndex] = useState(0); 
 
@@ -29,13 +38,6 @@ const Homepage = () => {
     scrollToIndex(nextIndex);
   }
 
-  
-  function handlePrev() {
-    const prevIndex = (currentIndex - 1 + images.length) % images.length; 
-    setCurrentIndex(prevIndex);
-    scrollToIndex(prevIndex);
-  }
-
   // Auto-scroll logic
   useEffect(() => {
     const interval = setInterval(() => {
@@ -43,9 +45,40 @@ const Homepage = () => {
     }, 3000); 
 
     return () => clearInterval(interval); 
-  }, [currentIndex]); 
+  }, [currentIndex]);
+  
+  function setCategoryFn(data) {
+      const allCategory = data.map((elem) => elem.category);
+      setCategory([...new Set(allCategory)]);
+    }
+  
+    const filterProductsByCategory = (selectedCategory) => {
+      if (selectedCategory === "All") {
+        setFilteredProducts(products);
+      } else {
+        const filtered = products.filter((product) => product.category === selectedCategory);
+        setFilteredProducts(filtered);
+      }
+    };
+  
+    useEffect(() => {
+      (async () => {
+        try {
+          const url = "https://fakestoreapi.com/products?limit=4";
+          const response = await fetchProductsData(url);
+          setProducts(response.data);
+          setFilteredProducts(response.data);
+          setCategoryFn(response.data);
+        } catch (error) {
+          console.log("Error : ", error.message);
+        }
+      })();
+    }, []);
+  
+
   return (
-    <div className='home'>
+    <div className="home">
+    <div className='slider'>
       <div  style={{ width: "800px", overflow: "hidden", margin: "0 auto" }}>
         {/* Carousel container */}
         <ul
@@ -76,12 +109,17 @@ const Homepage = () => {
           ))}
         </ul>
 
-        {/* Navigation controls */}
+        
       </div>
 
-      
-    
-    
+    </div>
+    <div className="card-card">
+        {filteredProducts.length > 0 &&
+          filteredProducts.map((elem) => {
+            return <Card key={elem.id} productData={elem} />;
+          })}
+          </div>
+
     </div>
     
   );

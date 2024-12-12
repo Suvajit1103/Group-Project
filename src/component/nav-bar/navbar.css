@@ -108,4 +108,8 @@
 .catagory:hover{
     font-weight: 900;
 }
+#cart{
+ margin-right: 20px;
+ color: #040404;
+}
 
