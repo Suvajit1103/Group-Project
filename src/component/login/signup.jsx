@@ -33,12 +33,6 @@ function Signbtn() {
     }
   };
 
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateTheme(newTheme);
-  };
 
   const handleLogin = () => {
     const name = nameRef.current.value;
@@ -118,12 +112,12 @@ function Signbtn() {
     <div className="container">
       <h2>Sign Up</h2>
       <input type="text" ref={nameRef} placeholder="Username" id="nameinput"/>
-        {errors.name && <p>{errors.name}</p>}
+        {errors.name && <p className="error">{errors.name}</p>}
       <input type="email" ref={emailRef} placeholder="Email" 
       id="userinput" />
-        {errors.email && <p>{errors.email}</p>}
+        {errors.email && <p className="error">{errors.email}</p>}
       <input type="tel" ref={phoneRef} placeholder="Phone Number" id="numberinput"/>
-        {errors.phone && <p>{errors.phone}</p>}
+        {errors.phone && <p className="error">{errors.phone}</p>}
       <div>
       <input 
         type={showPassword ? "text" : "password"} 
@@ -136,8 +130,8 @@ function Signbtn() {
         {showPassword ? 'Hide' : 'Show'}
       </button>
       </div>
-      {passwordStrength && <p>{passwordStrength}</p>}
-      {errors.password && <p>{errors.password}</p>}
+      {passwordStrength && <p className="error">{passwordStrength}</p>}
+      {errors.password && <p className="error">{errors.password}</p>}
       <div>
       <input 
         type={showPassword2 ? "text" : "password"} 
@@ -148,7 +142,7 @@ function Signbtn() {
         {showPassword2 ? 'Hide' : 'Show'}
       </button>
       </div>
-      {errors.password2 && <p>{errors.password2}</p>}
+      {errors.password2 && <p className="error">{errors.password2}</p>}
       <button className="btn" onClick={handleLogin}>Sign Up</button>
       
     </div>
