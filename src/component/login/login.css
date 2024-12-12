@@ -15,7 +15,6 @@
     transition: 0.4s ease-in;
    transform: translate(-50%, -50%);
    background: linear-gradient(to top, rgb(231, 161, 161), rgb(245, 245, 245));
-
 }
 
 
@@ -69,7 +68,6 @@
 
 #passinput::placeholder{
     color: rgb(0, 0, 0);
-
 }
 
 
@@ -111,9 +109,6 @@
     background: linear-gradient(to top, rgb(231, 161, 161), rgb(242, 239, 239));
 }
 
-
-
-/* From css */
 .from{
     border: 1px solid rgb(60, 60, 60);
     padding: 10px;
