@@ -36,7 +36,6 @@ const Homepage = () => {
     scrollToIndex(prevIndex);
   }
 
-  // Auto-scroll logic
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext(); 
@@ -56,7 +55,7 @@ const Homepage = () => {
             padding: 0,
             margin: 0,
             gap: "10px",
-            scrollSnapType: "x mandatory", // Optional: Smooth snapping effect
+            scrollSnapType: "x mandatory",
           }}
         >
           {images.map((src, index) => (
@@ -64,7 +63,7 @@ const Homepage = () => {
               key={index}
               style={{
                 flex: "0 0 auto",
-                scrollSnapAlign: "center", // Snap effect for better UX
+                scrollSnapAlign: "center",
               }}
             >
               <img
@@ -86,5 +85,4 @@ const Homepage = () => {
     
   );
 }
-
 export default Homepage;
