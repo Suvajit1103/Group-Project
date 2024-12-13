@@ -8,7 +8,7 @@ function Loginbtn() {
   const [userData, setUserData] = useState({ email: '', password: '' });
   const [showPassword, setShowPassword] = useState(false);
   const [passwordStrength, setPasswordStrength] = useState('');
-  const [errors, setErrors] = useState({}); // Declare errors state
+  const [errors, setErrors] = useState({});
 
   const handleLogin = () => {
     const email = emailRef.current.value;
@@ -66,7 +66,7 @@ function Loginbtn() {
   };
 
   return (
-    <div className="container">
+    <div className="login-container">
       <h2>Login</h2>
       <div className="box">
         <input 

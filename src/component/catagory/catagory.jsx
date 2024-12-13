@@ -4,7 +4,7 @@ import "./catagory.css";
 import Card from "../card/card";
 import axios from "axios";
 
-const Catagory = () => {
+const Catagory = ({onAddToCart}) => {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -51,7 +51,8 @@ const Catagory = () => {
       <div className="ccard">
         {filteredProducts.length > 0 &&
           filteredProducts.map((elem) => {
-            return <Card key={elem.id} productData={elem} />;
+            return <Card key={elem.id} productData={elem}
+             onAddToCart={onAddToCart} />;
           })}
           </div>
       </div>

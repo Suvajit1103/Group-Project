@@ -80,7 +80,7 @@ const Homepage = () => {
     <div className="home">
     <div className='slider'>
       <div  style={{ width: "800px", overflow: "hidden", margin: "0 auto" }}>
-        {/* Carousel container */}
+       
         <ul
           ref={listRef}
           style={{
@@ -89,7 +89,7 @@ const Homepage = () => {
             padding: 0,
             margin: 0,
             gap: "10px",
-            scrollSnapType: "x mandatory", // Optional: Smooth snapping effect
+            scrollSnapType: "x mandatory", 
           }}
         >
           {images.map((src, index) => (
@@ -97,7 +97,7 @@ const Homepage = () => {
               key={index}
               style={{
                 flex: "0 0 auto",
-                scrollSnapAlign: "center", // Snap effect for better UX
+                scrollSnapAlign: "center", 
               }}
             >
               <img

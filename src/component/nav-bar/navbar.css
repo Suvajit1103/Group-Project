@@ -16,13 +16,13 @@
 }
 
 .lightmode {
-    background-color: rgb(137, 215, 221);
+    background-color: rgb(185, 242, 247);
     color: rgb(0, 0, 0); 
     transition: 1s;
 }
 
 .darkmode {
-    background-color: #151F28;
+    background-color: #1b2935;
     color: white; 
     transition: 1s;
 }
@@ -90,6 +90,7 @@
 }
 
 .suggestions {
+    height: 200px;
     list-style-type: none;
     padding: 0;
     margin: 5px 0 0 0;
@@ -98,6 +99,8 @@
     background-color: white;
     position: absolute; 
     z-index: 1000;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .suggestions li {

@@ -1,7 +1,7 @@
 import React from "react";
 import "./c-navbar.css";
 
-const CNavbar = ({ category = [], onCategorySelect }) => {
+const CNavbar = ({ category = [], onCategorySelect}) => {
     console.log(category);
   
     if (!Array.isArray(category)) {
@@ -14,6 +14,10 @@ const CNavbar = ({ category = [], onCategorySelect }) => {
   
     return (
       <nav className="cnavbar">
+        <h1>My Store</h1>
+        {/* <div>
+        Cart: {cartItems.length} items
+      </div> */}
         <button className="add-product-link">Add New Product</button>
         <hr className="separator" />
         <h1 className="category-header" onClick={() => handleCategoryClick("All")}>Category Filter</h1>

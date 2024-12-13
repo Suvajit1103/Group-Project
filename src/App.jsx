@@ -3,6 +3,7 @@ import { useState } from 'react'
 import './App.css'
 import Navbar from './component/nav-bar/navbar'
 import Routing from './component/route/routing'
+import Footer from './component/footer/footer'
 
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
     <Navbar />
     
     <Routing/>
-
+    
+    <Footer/>
     </>
 
   )

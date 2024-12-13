@@ -1,7 +1,10 @@
-.container{
-    position: absolute;
+.login-container{
+    /* position: absolute;
     left: 50%;
-    top: 50%;
+    top: 50%; */
+    margin-top: 16%;
+    margin-left: 40%;
+    margin-bottom: 10%;
     width: 300px;
     height: auto;
     border: 1px solid rgba(0, 0, 0, 0.211);
@@ -13,19 +16,19 @@
     border-radius:10px;
     backdrop-filter: blur(18px);     
     transition: 0.4s ease-in;
-   transform: translate(-50%, -50%);
+   /* transform: translate(-50%, -50%); */
    background: linear-gradient(to top, rgb(231, 161, 161), rgb(245, 245, 245));
 }
 
 
-.container .box{
+.login-container .box{
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items:center;
 }
 
-.container .label{
+.login-container .label{
     display:flex;
     flex-direction: row;
     justify-content:space-between;
@@ -33,7 +36,7 @@
     margin-bottom:18px;
 }
 
-.container h2{
+.login-container h2{
     font-size: 30px;
     margin-bottom:20px;
     color:rgb(0, 0, 0);

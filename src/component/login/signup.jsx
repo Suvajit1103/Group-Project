@@ -8,30 +8,12 @@ function Signbtn() {
   const phoneRef = useRef(null);
   const passwordRef = useRef(null);
   const password2Ref = useRef(null);
-  const [userData, setUserData] = useState({ email: '', password: '' });
   const [passwordStrength, setPasswordStrength] = useState('');
-  const [theme, setTheme] = useState('light');
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
   const [showPassword2, setShowPassword2] = useState(false);
 
-  useEffect(() => {
-    const storedTheme = localStorage.getItem('theme');
-    if (storedTheme) {
-      setTheme(storedTheme);
-    }
-    updateTheme(storedTheme);
-  }, []);
-
-  const updateTheme = (theme) => {
-    if (theme === 'dark') {
-      document.body.classList.add('dark-mode');
-      document.body.classList.remove('light-mode');
-    } else {
-      document.body.classList.add('light-mode');
-      document.body.classList.remove('dark-mode');
-    }
-  };
+ 
 
 
   const handleLogin = () => {
@@ -47,7 +29,7 @@ function Signbtn() {
       return;
     }
 
-    setUserData({ email, password });
+    setUserData({ email, password, phoneno,password});
     console.log("Name:", name);
     console.log("Email:", email);
     console.log("Phone no:", phoneno);
