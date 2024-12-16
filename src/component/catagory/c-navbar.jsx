@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import "./c-navbar.css";
 
 const CNavbar = ({ category = [], onCategorySelect}) => {

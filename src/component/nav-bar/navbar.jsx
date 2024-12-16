@@ -48,7 +48,7 @@ const Navbar = () => {
                 </div>
 
         <div className="nav-menu">
-             <Link to="" className="Home"><svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0-960 960 960" width="25px" fill="black"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg></Link>
+             <Link to="" className="Home"><i className="fa fa-home" style={{ fontSize: '24px', marginLeft: '10px' }}></i></Link>
              
              <div id="search">
             <div>
@@ -69,7 +69,7 @@ const Navbar = () => {
              </div>
 
              <Link to="/catagory" className="catagory" >Catagory</Link>
-             <button className="themebtn" onClick={ToggleTheme}><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm40-83q119-15 199.5-104.5T800-480q0-123-80.5-212.5T520-797v634Z"/></svg></button>
+             <button className="themebtn" onClick={ToggleTheme}><i class="fa-solid fa-palette" style={{color: "#ffffff", fontSize: '24px', marginLeft: '10px'}}></i></button>
              
          </div>
                 <div className="login">
@@ -77,7 +77,7 @@ const Navbar = () => {
                         <i className="fas fa-shopping-cart" style={{ fontSize: '24px', marginLeft: '10px' }}></i>
                     </Link>
                     <Link to="login"><button id="btn1">Login</button></Link>
-                    <Link to="signup"><button id="btn2">Sign up</button></Link>
+                    {/* <Link to="signup"><button id="btn2">Sign up</button></Link> */}
 
                 </div>
              </div>

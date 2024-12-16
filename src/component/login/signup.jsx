@@ -1,13 +1,13 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import './signup.css';
+import { Link } from 'react-router-dom';
 
 function Signbtn() {
   
-  const nameRef = useRef(null);
-  const emailRef = useRef(null);
-  const phoneRef = useRef(null);
-  const passwordRef = useRef(null);
-  const password2Ref = useRef(null);
+  const lnameRef = useRef(null);
+  const lemailRef = useRef(null);
+  const lpasswordRef = useRef(null);
+  const [userData, setUserData] = useState({ lemail: '', lpassword: '',lname:'' });
   const [passwordStrength, setPasswordStrength] = useState('');
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
@@ -16,47 +16,37 @@ function Signbtn() {
  
 
 
-  const handleLogin = () => {
-    const name = nameRef.current.value;
-    const email = emailRef.current.value;
-    const phoneno = phoneRef.current.value;
-    const password = passwordRef.current.value;
-    const password2 = password2Ref.current.value;
+  const handleSign = () => {
+    const lname = lnameRef.current.value;
+    const lemail = lemailRef.current.value;
+    const lpassword = lpasswordRef.current.value;
+    
 
-    const validationErrors = validateInputs(name, email, password, password2);
+    const validationErrors = validateInputs(lname, lemail, lpassword);
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
 
-    setUserData({ email, password, phoneno,password});
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Phone no:", phoneno);
-    console.log("Password:", password);
+    setUserData({ lemail, lpassword,lname});
+    console.log("Name:", lname);
+    console.log("Email:", lemail);
+    console.log("Password:", lpassword);
   };
 
-  const validateInputs = (name, email, phone, password, password2) => {
+  const validateInputs = (lname, lemail, lpassword) => {
     const errors = {};
-    if (!name) {
+    if (!lname) {
       errors.name = 'Username is required !!';
     }
-    if (!email) {
+    if (!lemail) {
       errors.email = 'Email is required !!';
-    } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+    } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(lemail)) {
       errors.email = 'Invalid email address !!';
     }
-    if (!phone) {
-      errors.phone = 'Phone number is required !!';
-    }
-    if (!password) {
+    if (!lpassword) {
       errors.password = 'Password is required !!';
     } 
-    if (!password2) {
-      errors.password2 = 'Please confirm your password!';
-    } else if (password2 !== password) {
-      errors.password2 = 'Passwords do not match !!';
-    }
     return errors;
   };
 
@@ -86,49 +76,46 @@ function Signbtn() {
     setShowPassword(!showPassword);
   };
 
-  const togglePassword2Visibility = () => {
-    setShowPassword2(!showPassword2);
-  };
 
-  return (
-    <div className="container">
-      <h2>Sign Up</h2>
-      <input type="text" ref={nameRef} placeholder="Username" id="nameinput"/>
-        {errors.name && <p className="error">{errors.name}</p>}
-      <input type="email" ref={emailRef} placeholder="Email" 
-      id="userinput" />
-        {errors.email && <p className="error">{errors.email}</p>}
-      <input type="tel" ref={phoneRef} placeholder="Phone Number" id="numberinput"/>
-        {errors.phone && <p className="error">{errors.phone}</p>}
-      <div>
-      <input 
-        type={showPassword ? "text" : "password"} 
-        ref={passwordRef} 
-        placeholder="Password" 
-        onChange={(e) => checkPasswordStrength(e.target.value)}
-        id="passinput" 
-      />
-      <button className="show-btn" onClick={togglePasswordVisibility}>
-        {showPassword ? 'Hide' : 'Show'}
-      </button>
+    return (
+      <div className="signup-container">
+        <div className="signup-box">
+          <div className="signup-left">
+            <h2>WELCOME BACK!</h2>
+            <p>
+              Please Sign Up !
+            </p>
+          </div>
+          <div className="signup-right">
+            <h2>Sign Up</h2>
+            <div>
+              <div className="input-group">
+                <label htmlFor="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username" ref={lnameRef}/>
+                {errors.name && <p className="error">{errors.name}</p>}
+              </div>
+              <div className="input-group">
+                <label htmlFor="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" ref={lemailRef}/>
+                {errors.email && <p className="error">{errors.email}</p>}
+              </div>
+              <div className="input-group">
+                <label htmlFor="password">Password</label>
+                <div className="pas-in">
+                <input type={showPassword ? "text" : "password"} id="password" placeholder="Enter your password" ref={lpasswordRef} onChange={(e) => checkPasswordStrength(e.target.value)}/><button id="show-pass" onClick={togglePasswordVisibility}> {showPassword ? <i className="fa fa-eye-slash"/> : <i className="fa fa-eye"/>}</button>
+                </div>
+                {passwordStrength && <p className="error">{passwordStrength}</p>}
+                {errors.password && <p className="error">{errors.password}</p>}
+              </div>
+              <button  className="signup-btn" onClick={handleSign}>Sign Up</button>
+            </div>
+            <p>
+              Already have an account? <Link to={"/login"}>Login</Link>
+            </p>
+          </div>
+        </div>
       </div>
-      {passwordStrength && <p className="error">{passwordStrength}</p>}
-      {errors.password && <p className="error">{errors.password}</p>}
-      <div>
-      <input 
-        type={showPassword2 ? "text" : "password"} 
-        ref={password2Ref} 
-        placeholder="Confirm Password" id="passinput"
-      />
-      <button className="show-btn" onClick={togglePassword2Visibility}>
-        {showPassword2 ? 'Hide' : 'Show'}
-      </button>
-      </div>
-      {errors.password2 && <p className="error">{errors.password2}</p>}
-      <button className="btn" onClick={handleLogin}>Sign Up</button>
-      
-    </div>
-  );
-}
+    );
+  }
 
 export default Signbtn;

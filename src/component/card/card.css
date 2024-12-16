@@ -150,7 +150,7 @@
   
     margin-right: 10px;
 }
-.container-card .card .card-content a{
+.container-card .card .card-content button{
     display: inline-block;
   
     padding: 10px 20px;
@@ -173,7 +173,7 @@
 
     transition: 0.5s;
 }
-.container-card .card:hover .card-content a{
+.container-card .card:hover .card-content button{
     opacity: 1;
   
     transform: translateY(0px);

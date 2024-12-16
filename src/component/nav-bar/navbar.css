@@ -1,7 +1,8 @@
 .navbar{
     width: 100%;
     height: auto;
-    background: linear-gradient(to left, rgb(212, 246, 250), rgb(63, 157, 181));
+    /* background: linear-gradient(to left, rgb(212, 246, 250), rgb(63, 157, 181)); */
+    background-color: #1d1c1c;
     border: 2px solid rgba(0, 0, 0, 0.211);
     display:flex;
     justify-content: space-between;
@@ -16,7 +17,7 @@
 }
 
 .lightmode {
-    background-color: rgb(185, 242, 247);
+    background-color: rgb(163, 240, 255);
     color: rgb(0, 0, 0); 
     transition: 1s;
 }
@@ -27,8 +28,9 @@
     transition: 1s;
 }
 
+
 .Heading{
-    color: #040404;
+    color: #fff9f9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,16 +55,21 @@
 
 .nav-menu a {
     text-decoration: none;
-    color: rgb(15, 12, 12);
+    color: rgb(255, 255, 255);
     font-weight: 600;
     font-size: 18px;
 }
 .nav-menu #search input{
     border-radius: 50px;
-    border: 1px solid gray;
+    border: 1px solid rgb(230, 230, 230);
     padding: 5px;
     background-color: transparent;
+    color: #ffffff;
 }
+.nav-menu #search input::placeholder {
+color: #ffffff;
+}
+
 .login{
     padding: 10px;
     
@@ -74,19 +81,13 @@
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
+    color: #fff9f9;
 }
-#btn1{
-    border-right: 3px solid black;
-}
-
 
 .themebtn{
-    border:1px;
-    background-color: transparent;
-    padding: 5px 7px;
-    font-size: 18px;
-    font-weight: bold;
+   background-color: transparent;
     cursor: pointer;
+    border: none;
 }
 
 .suggestions {
@@ -108,11 +109,8 @@
     cursor: pointer;
 }
 
-.catagory:hover{
-    font-weight: 900;
-}
 #cart{
  margin-right: 20px;
- color: #040404;
+ color: #ffffff;
 }
 

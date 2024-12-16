@@ -1,16 +1,10 @@
-import React from "react";
-
 import "./card.css";
-import { NavLink, Link } from "react-router-dom";
-function Card({ productData, onAddToCart }) {
-  const handleAddToCart = () => {
-    onAddToCart(productData);
-  };
+const Card = ({ productData, onAddToCart, onRemoveFromCart }) => {
 
   return (
     <div className="container-card">
       <div className="card">
-        <Link to={`/details/${productData.title}`}>
+        
           <div className="card-image">
             <img src={productData?.image} alt="amazon-box" />
           </div>
@@ -19,9 +13,13 @@ function Card({ productData, onAddToCart }) {
             <div className="price">
               <h3>price :  ${productData?.price}</h3>
             </div>
-            <Link onClick={handleAddToCart}>Add To Cart</Link>
+            {onRemoveFromCart ? (
+        <button onClick={() => onRemoveFromCart(productData.id)}> Remove from cart</button>
+      ) : (
+        <button onClick={() => onAddToCart(productData)}>Add to Cart</button>
+      )}
           </div>
-        </Link>
+       
       </div>
     </div>
   );

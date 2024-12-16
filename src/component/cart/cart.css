@@ -1,3 +1,19 @@
-.class{
-    
+.cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.cart-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cart h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
 }

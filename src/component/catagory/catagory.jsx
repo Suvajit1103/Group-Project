@@ -4,7 +4,7 @@ import "./catagory.css";
 import Card from "../card/card";
 import axios from "axios";
 
-const Catagory = ({onAddToCart}) => {
+const Catagory = ({ onAddToCart }) => {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -41,20 +41,18 @@ const Catagory = ({onAddToCart}) => {
     })();
   }, []);
 
-
   return (
     <>
-    <div className="home-container">
-      <div className="cnav">
-      <CNavbar category={category} onCategorySelect={filterProductsByCategory} />
-      </div>
-      <div className="ccard">
-        {filteredProducts.length > 0 &&
-          filteredProducts.map((elem) => {
-            return <Card key={elem.id} productData={elem}
-             onAddToCart={onAddToCart} />;
-          })}
-          </div>
+      <div className="home-container">
+        <div className="cnav">
+          <CNavbar category={category} onCategorySelect={filterProductsByCategory} />
+        </div>
+        <div className="ccard">
+          {filteredProducts.length > 0 &&
+            filteredProducts.map((elem) => {
+              return <Card key={elem.id} productData={elem} onAddToCart={onAddToCart} />;
+            })}
+        </div>
       </div>
     </>
   );

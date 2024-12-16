@@ -8,9 +8,8 @@ const images = [
     'https://cdn.prod.website-files.com/605826c62e8de87de744596e/66b9a6e182d716e727515048_6304972b0f458d536743e9d9_reebok.jpeg','https://static.vecteezy.com/system/resources/previews/048/909/710/non_2x/amazed-young-woman-shopaholic-holding-colorful-shopping-bags-and-look-amused-at-next-shop-buying-things-in-store-standing-over-blue-background-photo.jpg	','https://static.vecteezy.com/system/resources/thumbnails/047/961/634/small/cheerful-redhead-man-buying-gifts-holding-shopping-bags-and-smiling-standing-over-pink-background-photo.jpg','https://i.pinimg.com/736x/ff/7f/5e/ff7f5e94f2f885e26a244d839e975adc.jpg'
   ];
 
-const Homepage = () => {
+const Homepage = ({onAddToCart}) => {
    const [products, setProducts] = useState([]);
-    const [category, setCategory] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
 
     function fetchProductsData(url) {
@@ -47,20 +46,8 @@ const Homepage = () => {
     return () => clearInterval(interval); 
   }, [currentIndex]);
   
-  function setCategoryFn(data) {
-      const allCategory = data.map((elem) => elem.category);
-      setCategory([...new Set(allCategory)]);
-    }
   
-    const filterProductsByCategory = (selectedCategory) => {
-      if (selectedCategory === "All") {
-        setFilteredProducts(products);
-      } else {
-        const filtered = products.filter((product) => product.category === selectedCategory);
-        setFilteredProducts(filtered);
-      }
-    };
-  
+
     useEffect(() => {
       (async () => {
         try {
@@ -114,9 +101,8 @@ const Homepage = () => {
 
     </div>
     <div className="card-card">
-        {filteredProducts.length > 0 &&
-          filteredProducts.map((elem) => {
-            return <Card key={elem.id} productData={elem} />;
+        {filteredProducts.map((elem) => {
+            return <Card key={elem.id} productData={elem} onAddToCart={onAddToCart}/>;
           })}
           </div>
 

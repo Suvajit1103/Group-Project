@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
 import './login.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import {Link} from 'react-router-dom';
 
 function Loginbtn() {
   
@@ -67,42 +69,43 @@ function Loginbtn() {
 
   return (
     <div className="login-container">
-      <h2>Login</h2>
-      <div className="box">
-        <input 
-          type="text" 
-          id="userinput" 
-          placeholder="Enter Your Email" 
-          ref={emailRef}
-        />
-        {errors.email && <p className="error">{errors.email}</p>}
-        <div>
-          <input 
-            type={showPassword ? "text" : "password"} 
-            id="passinput" 
-            onChange={(e) => checkPasswordStrength(e.target.value)}
-            placeholder="Enter your password" 
-            ref={passwordRef}
-          />
-          <button className="show-btn" onClick={togglePasswordVisibility}>
-            {showPassword ? 'Hide' : 'Show'}
-          </button>
+      <div className="login-box">
+        <div className="login-left">
+          <h2>Login</h2>
+          <div>
+            <div className="Sinput-group">
+              <label htmlFor="username">Username</label>
+              <input type="text" id="username" placeholder="Enter your username" ref={emailRef}/>
+
+              {errors.email && <p className="error">{errors.email}</p>}
+            </div>
+            <div className="Sinput-group">
+              <label htmlFor="password">Password</label>
+              <div className="pass-in">
+              <input type={showPassword ? "text" : "password"} id="password" placeholder="Enter your password"  onChange={(e) => checkPasswordStrength(e.target.value)} ref={passwordRef}/> <button id="show-pass" onClick={togglePasswordVisibility}> {showPassword ? <i className="fa fa-eye-slash"/> : <i className="fa fa-eye"/>}</button></div>
+            {passwordStrength && <p className="error">{passwordStrength}</p>}
+          {errors.password && <p className="error">{errors.password}</p>}
+            </div>
+            <button  className="login-btn" onClick={handleLogin}>Login</button>
+          </div>
+          <p>
+            Don’t have an account? <Link to={"/signup"}>Sign Up</Link>
+          </p>
         </div>
-        {passwordStrength && <p className="error">{passwordStrength}</p>}
-        {errors.password && <p className="error">{errors.password}</p>}
+        <div className="login-right">
+          <h2>WELCOME BACK!</h2>
+          <p>
+            Please Login !
+          </p>
+        </div>
       </div>
-
-      <div className="label">
-        <label className="remember">
-          Remember me
-          <input type="checkbox" id="check" />
-        </label>
-        <label className="forget"> Forget Password? </label>
-      </div>
-      <button className="btn" onClick={handleLogin}> Login </button>
-
     </div>
   );
 }
 
 export default Loginbtn;
+
+
+{/* <button className="show-btn" onClick={togglePasswordVisibility}>
+          {showPassword ? 'Hide' : 'Show'}
+        </button> */}
