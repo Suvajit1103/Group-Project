@@ -1,19 +1,14 @@
 .navbar{
     width: 100%;
     height: auto;
-    /* background: linear-gradient(to left, rgb(212, 246, 250), rgb(63, 157, 181)); */
     background-color: #1d1c1c;
     border: 2px solid rgba(0, 0, 0, 0.211);
     display:flex;
     justify-content: space-between;
-    /* align-items: center; */
     padding:10px;
-    border-radius:5px;
     backdrop-filter: blur(20px);     
     transition: 0.4s ease-in;
-    /* position: fixed;
-    overflow: hidden;
-    top: 0; */
+    position: relative;
 }
 
 .lightmode {
@@ -50,7 +45,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 500px;
+    width: 350px;
 }
 
 .nav-menu a {
@@ -70,19 +65,6 @@
 color: #ffffff;
 }
 
-.login{
-    padding: 10px;
-    
-}
-.login button{
-    border:1px;
-    background-color: transparent;
-    padding: 5px 7px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    color: #fff9f9;
-}
 
 .themebtn{
    background-color: transparent;
@@ -91,7 +73,7 @@ color: #ffffff;
 }
 
 .suggestions {
-    height: 200px;
+    height: 100px;
     list-style-type: none;
     padding: 0;
     margin: 5px 0 0 0;
@@ -109,8 +91,40 @@ color: #ffffff;
     cursor: pointer;
 }
 
+.login{
+    padding: 10px ;
+    display: flex;
+}
+.login button{
+    border:1px;
+    background-color: transparent;
+    padding: 5px 7px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff9f9;
+}
+
 #cart{
- margin-right: 20px;
- color: #ffffff;
+    padding-top: 2px;
+    margin-right: 10px;
+    color: #ffffff;
+}
+.cart-container{
+    display: flex;
+}
+.counter{
+    position: relative;
+    right: 22px;
+    bottom: 7px;
+    text-align: center;
+    border-radius: 8px;
+    width: 18px;
+    height: 18px;
+    background-color: #ffffff;
+    border: 1.5px solid #000000;
+    color: #000000;
+    line-height: 16px;
+    font-size: 12px;
 }
 

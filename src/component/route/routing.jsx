@@ -5,6 +5,7 @@ import Loginbtn from "../login/login";
 import Signbtn from "../login/signup";
 import Catagory from "../catagory/catagory";
 import Cart from "../cart/cart";
+import Buy from "../buy/buy";
 
 const Routing = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -24,6 +25,7 @@ const Routing = () => {
       <Route path="/login" element={<Loginbtn />} />
       <Route path="/signup" element={<Signbtn />} />
       <Route path="/cart" element={<Cart cartItems={cartItems} onRemoveFromCart={handleRemoveFromCart} />} />
+      <Route path="/buy" element={<Buy/>} />
     </Routes>
   );
 };

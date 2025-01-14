@@ -1,15 +1,16 @@
 /* Container for the home page */
 .home-container {
-    /* width: 85%; */
-    height: fit-content;
     padding: 20px;
     display: flex;
-    gap: 20px;
+    position: relative;
+    /* top: 10px; */
+    /* gap: 20px; */
     flex-wrap: wrap;
     overflow-x: hidden;
-    /* overflow-y: auto; */
-    /* align-items: flex-start; */
-    /* background-color: red; */
+    /* padding-top: 70px;  */
+    /* padding-bottom: 60px; */
+    overflow-y: auto;
+    height: calc(100vh - 115px); 
 }
 /* .cnav{
     display: flex;

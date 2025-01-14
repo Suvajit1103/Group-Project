@@ -14,11 +14,11 @@ const CNavbar = ({ category = [], onCategorySelect}) => {
   
     return (
       <nav className="cnavbar">
-        <h1>My Store</h1>
+        {/* <h1>My Store</h1> */}
         {/* <div>
         Cart: {cartItems.length} items
       </div> */}
-        <button className="add-product-link">Add New Product</button>
+        {/* <button className="add-product-link">Add New Product</button> */}
         <hr className="separator" />
         <h1 className="category-header" onClick={() => handleCategoryClick("All")}>Category Filter</h1>
         <ul className="category-list">

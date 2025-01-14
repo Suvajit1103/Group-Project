@@ -1,5 +1,12 @@
+.all-card{
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; 
+  padding: 10px; 
+}
 .container-card{
-    /* position: relative; */
+    position: relative;
   
     margin: 0 20px;
 
@@ -172,6 +179,8 @@
     transform: translateY(50px);
 
     transition: 0.5s;
+
+    cursor: pointer;
 }
 .container-card .card:hover .card-content button{
     opacity: 1;
@@ -179,4 +188,6 @@
     transform: translateY(0px);
 
     transition-delay: 0.75s;
+
+    background-color: rgb(255, 255, 255);
 }

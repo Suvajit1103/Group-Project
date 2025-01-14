@@ -11,3 +11,11 @@
 .darkmode {
     background-color: black;
 }
+#background{
+    position: fixed;
+      filter: brightness(70%);
+      right: 0;
+      bottom: 0;
+      min-width: 100%; 
+      min-height: 100%;
+  }

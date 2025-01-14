@@ -54,6 +54,7 @@ const Catagory = ({ onAddToCart }) => {
             })}
         </div>
       </div>
+      
     </>
   );
 };

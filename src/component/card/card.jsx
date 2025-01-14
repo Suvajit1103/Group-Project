@@ -2,6 +2,7 @@ import "./card.css";
 const Card = ({ productData, onAddToCart, onRemoveFromCart }) => {
 
   return (
+    <div className="all-card">
     <div className="container-card">
       <div className="card">
         
@@ -21,6 +22,7 @@ const Card = ({ productData, onAddToCart, onRemoveFromCart }) => {
           </div>
        
       </div>
+    </div>
     </div>
   );
 }
