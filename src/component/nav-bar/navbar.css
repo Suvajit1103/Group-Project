@@ -113,7 +113,7 @@ color: #ffffff;
 .cart-container{
     display: flex;
 }
-.counter{
+/* .counter{
     position: relative;
     right: 22px;
     bottom: 7px;
@@ -126,5 +126,5 @@ color: #ffffff;
     color: #000000;
     line-height: 16px;
     font-size: 12px;
-}
+} */
 

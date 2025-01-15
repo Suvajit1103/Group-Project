@@ -66,7 +66,7 @@ const Homepage = ({onAddToCart}) => {
   return (
     <div className="home">
     <div className='slider'>
-      <div  style={{ width: "800px", overflow: "hidden", margin: "0 auto" }}>
+      <div  style={{ width: "1500px", overflow: "hidden", margin: "0 auto" }}>
        
         <ul
           ref={listRef}
@@ -90,7 +90,7 @@ const Homepage = ({onAddToCart}) => {
               <img
                 src={src}
                 alt={`Image ${index + 1}`}
-                style={{ width: "800px", height: "300px", borderRadius: "8px", objectFit:"fill"}}
+                style={{ width: "1500px", height: "300px", borderRadius: "8px", objectFit:"fill"}}
               />
             </li>
           ))}

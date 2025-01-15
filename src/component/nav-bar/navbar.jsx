@@ -9,7 +9,7 @@ const Navbar = () => {
     const [suggestions, setSuggestions] = useState([]);
     const allSuggestions = ['mens cloth', 'jewelery', 'electronics', 'womens clothing', 'shirt','t-shirt','tsirt','shoes','mans cloth','womans clothing','ladies bag','ladies watch','boys shirt','boys shoes','underwear','TV','fridge','ac','micro-wave','iron','bike','iphone 16','iphone 16 plus','iphone 16 pro','iphone 15','iphone 14','iphone 13','iqoo 13','iqoo mobile','Ear Rings','cosmetices','Laptop','Desktop','pampers','SSD','HDD','printer','CC-TV','Monitor',''];
 
-    const [cartCount, setCartCount] = useState(0);
+    // const [cartCount, setCartCount] = useState(0);
     const [isLightMode, setIsLightMode] = useState(true);
 
     const ToggleTheme = () => {
@@ -83,9 +83,9 @@ const Navbar = () => {
                 <Link id="cart" to="/cart">
                         <i className="fas fa-shopping-cart" style={{ fontSize: '24px', marginLeft: '10px' }}></i>
                     </Link>
-                    <div className="counter">
+                    {/* <div className="counter">
                     {cartCount}
-                    </div>
+                    </div> */}
                     </div>
                     <Link to="login"><button id="btn1">Login</button></Link>
                     {/* <Link to="signup"><button id="btn2">Sign up</button></Link> */}
